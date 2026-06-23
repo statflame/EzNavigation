@@ -1,6 +1,11 @@
 # discord-ez-navigation
 
-A Vencord userplugin for the Dupers University server. Adds a button to the server header that opens a searchable, sortable directory of the server's Guilds (categories), each showing its member count and a Jump to that Guild's general channel.
+A Vencord plugin mainly for the Dupers University server. Adds a button to the server header that opens a searchable directory of the server's Guilds (or categories), each showing a jump to that Guild's general channel.
+
+## Screenshots
+<img width="1234" height="820" alt="image" src="https://github.com/user-attachments/assets/8b597333-de3b-46f1-8d82-df45d751be92" />
+
+
 
 ## Installation
 
@@ -11,5 +16,5 @@ A Vencord userplugin for the Dupers University server. Adds a button to the serv
    pnpm build
    pnpm inject
    ```
-4. Restart Discord, then enable **EzNavigation** in Settings → Plugins.
+4. Restart Discord, then enable **EzNavigation** in Settings → (Vencord) Plugins.
 5. Set your server ID in the plugin's `enabledGuildIds` setting.
