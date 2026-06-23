@@ -1,0 +1,388 @@
+[class*="root_"]:has(> .vc-guildlisting-header),
+[class*="root-"]:has(> .vc-guildlisting-header) {
+    --gl-a1: #5566a8;
+    --gl-a2: #3f7e9a;
+    --gl-accent: #8fa3cf;
+    --gl-edge: rgba(120, 140, 200, 0.30);
+    --gl-chip: rgba(120, 140, 200, 0.13);
+    --gl-accent-bg: rgba(85, 102, 168, 0.30);
+    --gl-accent-bg-h: rgba(85, 102, 168, 0.45);
+    --gl-glow: rgba(85, 102, 168, 0.28);
+
+    --gl-panel: rgba(255, 255, 255, 0.028);
+    --gl-field: rgba(0, 0, 0, 0.26);
+
+    background: linear-gradient(168deg, rgba(32, 36, 46, 0.86), rgba(20, 23, 30, 0.90)) !important;
+    border: 1px solid rgba(255, 255, 255, 0.09) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.07),
+        0 24px 70px rgba(0, 0, 0, 0.50),
+        0 0 50px -26px var(--gl-glow) !important;
+    overflow: hidden;
+}
+
+[class*="root_"]:has(> .vc-guildlisting-header)::before,
+[class*="root-"]:has(> .vc-guildlisting-header)::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gl-edge), transparent);
+    z-index: 3;
+    pointer-events: none;
+}
+
+.vc-guildlisting-header {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 16px 18px 14px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.vc-guildlisting-header-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: var(--gl-chip);
+    border: 1px solid var(--gl-edge);
+    color: var(--gl-accent);
+}
+
+.vc-guildlisting-titlewrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.vc-guildlisting-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    color: #f1f3f7;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: -0.2px;
+}
+
+.vc-guildlisting-subtitle {
+    font-size: 11.5px;
+    color: #7d8492;
+}
+
+.vc-guildlisting-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 21px;
+    padding: 0 7px;
+    border-radius: 7px;
+    background: var(--gl-chip);
+    border: 1px solid var(--gl-edge);
+    color: var(--gl-accent);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.vc-guildlisting-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.vc-guildlisting-content {
+    padding: 14px 18px 18px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.vc-guildlisting-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 13px;
+    margin: 0;
+    background: var(--gl-field);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 11px;
+}
+
+.vc-guildlisting-search-icon { flex-shrink: 0; color: #727988; }
+
+.vc-guildlisting-search-input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: #e9ecf2;
+    font-size: 13.5px;
+}
+
+.vc-guildlisting-search-input::placeholder { color: #727988; }
+
+.vc-guildlisting-search-count {
+    flex-shrink: 0;
+    font-family: var(--font-code);
+    font-size: 12px;
+    color: #727988;
+}
+
+.vc-guildlisting-list-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2px 3px 4px;
+}
+
+.vc-guildlisting-list-label {
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: #727988;
+}
+
+.vc-guildlisting-sort {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.vc-guildlisting-sort-title {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #5d6470;
+    margin-right: 2px;
+}
+
+.vc-guildlisting-sort-btn {
+    height: 25px;
+    padding: 0 9px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(255, 255, 255, 0.03);
+    color: #9aa0ad;
+    transition: all 0.12s;
+}
+
+.vc-guildlisting-sort-btn:hover {
+    border-color: var(--gl-accent);
+    color: #fff;
+}
+
+.vc-guildlisting-sort-btn[data-active="true"] {
+    border-color: var(--gl-edge);
+    background: var(--gl-accent-bg);
+    color: #eef1ff;
+}
+
+.vc-guildlisting-list {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.vc-guildlisting-entry {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 9px 11px;
+    border: 1px solid rgba(255, 255, 255, 0.055);
+    background: rgba(255, 255, 255, 0.018);
+    border-radius: 11px;
+    transition: background-color 0.12s, border-color 0.12s;
+}
+
+.vc-guildlisting-entry:hover {
+    background: rgba(255, 255, 255, 0.045);
+    border-color: rgba(255, 255, 255, 0.11);
+}
+
+.vc-guildlisting-entry-left {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+}
+
+.vc-guildlisting-avatar {
+    border-radius: 13px;
+    flex-shrink: 0;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.vc-guildlisting-avatar-fallback {
+    width: 36px;
+    height: 36px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, var(--gl-a1), var(--gl-a2));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.vc-guildlisting-entry-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.vc-guildlisting-entry-name {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #f1f3f7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.vc-guildlisting-verified { flex-shrink: 0; color: var(--gl-accent); }
+
+.vc-guildlisting-entry-stats {
+    font-size: 11.5px;
+    color: var(--gl-accent);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.2;
+}
+
+.vc-guildlisting-points {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-top: 1px;
+}
+
+.vc-guildlisting-point {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: var(--font-code);
+    font-size: 11.5px;
+}
+
+.vc-guildlisting-point-global { color: #9aa1af; }
+.vc-guildlisting-point-global svg { color: #7d8492; }
+.vc-guildlisting-point-seasonal { color: var(--gl-accent); }
+
+.vc-guildlisting-join {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 30px;
+    padding: 0 15px;
+    border-radius: 8px;
+    border: 1px solid var(--gl-edge);
+    background: var(--gl-accent-bg);
+    color: #eef1ff;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: background 0.12s, border-color 0.12s;
+}
+
+.vc-guildlisting-join:hover {
+    border-color: var(--gl-accent);
+    background: var(--gl-accent-bg-h);
+    color: #fff;
+}
+
+.vc-guildlisting-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    padding: 34px 20px;
+    text-align: center;
+}
+
+.vc-guildlisting-empty-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    color: #6a7180;
+}
+
+.vc-guildlisting-empty p {
+    margin: 0;
+    font-size: 13.5px;
+    color: #a4abb8;
+}
+
+.vc-guildlisting-header-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 31px;
+    height: 31px;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+    background: rgba(255, 255, 255, 0.03) !important;
+    color: #878d9b !important;
+    cursor: pointer;
+    transition: background 0.12s, color 0.12s, border-color 0.12s !important;
+}
+
+.vc-guildlisting-header-actions button:hover {
+    border-color: rgba(255, 255, 255, 0.13) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: #fff !important;
+}
+
+.vc-guildlisting-header-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 0 1px;
+}
+
+.vc-guildlisting-header-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    height: 24px;
+    padding: 0 4px;
+    margin-left: 4px;
+    color: var(--interactive-normal);
+    cursor: pointer;
+}
+
+.vc-guildlisting-header-btn:hover { color: var(--interactive-hover); }
